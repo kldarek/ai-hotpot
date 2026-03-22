@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🤖 Lekcja o AI — NAZWA KLASY</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh; padding: 20px; color: #333;
+    }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 { text-align: center; color: white; font-size: 2em; margin-bottom: 30px;
+         text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+    .section { background: white; border-radius: 16px; padding: 24px;
+               margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    .section h2 { color: #5b21b6; margin-bottom: 12px; font-size: 1.4em; }
+    .section h3 { color: #7c3aed; margin: 16px 0 8px 0; font-size: 1.15em; }
+    .section p, .section ul { font-size: 1.1em; line-height: 1.6; color: #444; }
+    .section ul { padding-left: 20px; }
+    .section li { margin-bottom: 8px; }
+    .placeholder { color: #999; font-style: italic; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+               gap: 12px; margin-top: 12px; }
+    .gallery img { width: 100%; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .uwaga-images { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+    .uwaga-images img { width: 100%; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .emoji-big { font-size: 1.4em; }
+    footer { text-align: center; color: rgba(255,255,255,0.8); margin-top: 30px; font-size: 0.95em; }
+    @media (max-width: 600px) {
+      .uwaga-images { grid-template-columns: 1fr; }
+      h1 { font-size: 1.5em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- CUSTOMIZE: Change the title to match your class -->
+    <h1>🤖 Sztuczna Inteligencja — NAZWA KLASY</h1>
+
+    <!-- SECTION 1: What is AI? -->
+    <div class="section" id="section-1">
+      <h2>1️⃣ Czym jest Sztuczna Inteligencja?</h2>
+      <p class="placeholder">📝 Tu wspólnie napiszemy czym jest AI...</p>
+    </div>
+
+    <!-- SECTION 2: Teachable Machine (initially commented out) -->
+    <!-- UNCOMMENT THIS SECTION after training a model during class:
+    <div class="section" id="section-2">
+      <h2>2️⃣ Jak trenuje się Sztuczną Inteligencję?</h2>
+      <p>Wytrenowaliśmy własny model AI!</p>
+      <p>Kliknij <strong>Start</strong>, żeby włączyć kamerę i sprawdzić nasz model:</p>
+      <div style="text-align: center; margin: 20px 0;">
+        <button type="button" onclick="init()" style="
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          color: white; border: none; padding: 16px 40px; font-size: 1.3em;
+          border-radius: 12px; cursor: pointer; font-weight: bold;
+          box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        ">▶️ Start</button>
+      </div>
+      <div id="webcam-container" style="display: flex; justify-content: center; margin: 16px 0;"></div>
+      <div id="label-container" style="font-size: 1.3em; font-weight: bold; text-align: center; color: #5b21b6;"></div>
+    </div>
+    -->
+
+    <!-- SECTION 3: How does AI work? -->
+    <div class="section" id="section-3">
+      <h2>3️⃣ Jak działa AI?</h2>
+      <p class="placeholder">📝 Tu wspólnie napiszemy jak działa AI...</p>
+    </div>
+
+    <!-- SECTION 4: Why do we need AI? -->
+    <div class="section" id="section-4">
+      <h2>4️⃣ Po co nam AI?</h2>
+      <p class="placeholder">📝 Tu wspólnie napiszemy do czego potrzebujemy AI...</p>
+    </div>
+
+    <!-- SECTION 5: What to watch out for -->
+    <div class="section" id="section-5">
+      <h2>5️⃣ ⚠️ Na co uważać?</h2>
+      <p class="placeholder">📝 Porozmawiamy o tych obrazkach — czy Wasi rodzice zgadną, o co chodzi?</p>
+      <div class="uwaga-images">
+        <img src="uwaga1.jpg" alt="Obraz 1 — Na co uważać z AI">
+        <img src="uwaga2.jpg" alt="Obraz 2 — Na co uważać z AI">
+        <img src="uwaga3.jpg" alt="Obraz 3 — Na co uważać z AI">
+      </div>
+    </div>
+
+    <!-- SECTION 6: AI Gallery -->
+    <div class="section" id="section-6">
+      <h2>6️⃣ 🎨 Promptowanie i zabawa — Galeria AI</h2>
+      <p>Obrazki wygenerowane przez sztuczną inteligencję z pomysłów uczniów:</p>
+      <div class="gallery">
+        <p class="placeholder">📝 Tu pojawią się obrazki, które wspólnie stworzymy...</p>
+      </div>
+    </div>
+
+    <!-- CUSTOMIZE: Change the footer to match your class -->
+    <footer>🤖 Zbudowane wspólnie przez NAZWA KLASY — 2026</footer>
+  </div>
+
+  <!-- UNCOMMENT after adding Teachable Machine model -->
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+  <script>
+    // REPLACE with your exported Teachable Machine model URL:
+    const URL = "https://teachablemachine.withgoogle.com/models/YOUR_MODEL_ID/";
+    let model, webcam, labelContainer, maxPredictions;
+    async function init() {
+      model = await tmImage.load(URL + "model.json", URL + "metadata.json");
+      maxPredictions = model.getTotalClasses();
+      const flip = true;
+      webcam = new tmImage.Webcam(300, 300, flip);
+      await webcam.setup(); await webcam.play();
+      window.requestAnimationFrame(loop);
+      document.getElementById("webcam-container").appendChild(webcam.canvas);
+      labelContainer = document.getElementById("label-container");
+      for (let i = 0; i < maxPredictions; i++)
+        labelContainer.appendChild(document.createElement("div"));
+    }
+    async function loop() { webcam.update(); await predict(); window.requestAnimationFrame(loop); }
+    async function predict() {
+      const prediction = await model.predict(webcam.canvas);
+      for (let i = 0; i < maxPredictions; i++) {
+        const pct = (prediction[i].probability * 100).toFixed(0);
+        labelContainer.childNodes[i].innerHTML = prediction[i].className + ": " + pct + "%";
+      }
+    }
+  </script>
+  -->
+</body>
+</html>
