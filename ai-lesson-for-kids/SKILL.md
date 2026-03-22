@@ -22,7 +22,9 @@ and generate AI art — all appearing live on a class website.
   - `curl`, `python3`, `bash`
 - **Hardware:**
   - Computer with webcam + projector for Teachable Machine demo
-  - QR code printed for the site URL (so kids can access on tablets)
+- **Printed materials:**
+  - [CS Unplugged "Intelligent Paper"](https://www.cs4fn.org/teachers/activities/intelligentpaper/intelligentpaper.pdf) tic-tac-toe sheet
+  - QR code for the site URL (so kids can show parents at home)
 
 ## Quick Setup
 
@@ -48,13 +50,15 @@ npx netlify deploy --dir=. --prod
 
 ### 3. Prepare "What to Watch Out For" images
 
-Generate 3 images illustrating AI risks (deepfakes, bias, privacy) beforehand:
+Generate 3 images based on metaphors kids already know:
 
 ```bash
-./scripts/generate_image.sh "a cartoon showing a fake photo that looks real but isn't" /tmp/ai-lesson-site/uwaga1.jpg
-./scripts/generate_image.sh "a cartoon robot making unfair decisions about people" /tmp/ai-lesson-site/uwaga2.jpg
-./scripts/generate_image.sh "a cartoon showing someone's private data floating in the air" /tmp/ai-lesson-site/uwaga3.jpg
+./scripts/generate_image.sh "Pinocchio with a long nose, lying, cartoon style" /tmp/ai-lesson-site/uwaga1.jpg
+./scripts/generate_image.sh "the Mirror of Erised from Harry Potter showing someone what they want to see" /tmp/ai-lesson-site/uwaga2.jpg
+./scripts/generate_image.sh "a boy in a wheelchair from The Secret Garden, his legs weak from not using them" /tmp/ai-lesson-site/uwaga3.jpg
 ```
+
+These represent: AI hallucination (Pinocchio), AI sycophancy (Mirror of Erised), and cognitive atrophy from over-reliance on AI (The Secret Garden).
 
 ### 4. Redeploy with images and print QR code
 
@@ -63,12 +67,12 @@ cd /tmp/ai-lesson-site
 npx netlify deploy --site YOUR_SITE_ID --dir=. --prod
 ```
 
-Generate a QR code for the site URL and print it for the classroom.
+Generate a QR code for the site URL and print it — kids take it home with the tic-tac-toe handout.
 
 ## During the Lesson
 
 The teacher controls the lesson from their phone. If using an AI agent (e.g. OpenClaw),
-the agent responds to messages and updates the website automatically. Without an agent,
+the agent responds to voice notes/messages and updates the website automatically. Without an agent,
 you can edit the HTML manually and redeploy — it takes ~10 seconds.
 
 ### Update a section
@@ -127,22 +131,23 @@ Requires: `GEMINI_API_KEY` environment variable.
 
 ## Tips
 
-- Kids love seeing their words appear on a "real website" — the live updates are magical
+- Kids love seeing their words appear on a "real website" — the live updates are engaging
 - 30-50 webcam samples per Teachable Machine class is enough
 - Let kids write prompts on paper → photograph → transcribe (more fun than typing)
 - Rock-Paper-Scissors works great as a Teachable Machine demo (everyone has hands!)
-- The "Is a piece of paper intelligent?" hook (tic-tac-toe algorithm) grabs attention immediately
+- The "Intelligent Paper" tic-tac-toe hook from [CS Unplugged](https://classic.csunplugged.org/artificial-intelligence/) grabs attention immediately
 - Budget at least 15 minutes for the gallery — it's the highlight
+- Have a kid be your assistant and follow the paper algorithm (makes it more fun)
 
 ## Using with an AI Agent (Optional)
 
 This skill is designed to work with [OpenClaw](https://github.com/openclaw/openclaw) or any
 AI agent that can edit files, run shell commands, and deploy websites. The agent acts as
-invisible infrastructure — the kids never see it, they just see the website updating "magically."
+invisible infrastructure — the kids never see it, they just see the website updating.
 
 To use with OpenClaw:
 1. Copy this skill folder into your OpenClaw skills directory
 2. Set `NETLIFY_AUTH_TOKEN` and `GEMINI_API_KEY` in your `.env`
-3. During the lesson, send messages via Telegram — the agent handles edits + deploys
+3. During the lesson, send voice notes via Telegram — the agent handles edits + deploys
 
 But the lesson works perfectly fine without any agent — just edit and deploy manually.
