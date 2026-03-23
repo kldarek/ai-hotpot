@@ -9,6 +9,7 @@ Each folder is a self-contained **skill**: a set of instructions, templates, and
 | Skill | Description |
 |-------|-------------|
 | [ai-lesson-for-kids](./ai-lesson-for-kids/) | Run a 45-minute interactive AI lesson for kids age 7-10 with a live website, Teachable Machine, and AI-generated art |
+| [dreams-audio](./dreams-audio/) | Generate a personalized nightly podcast — AI explores 4 themes from your notes and delivers an audio episode every morning |
 
 ## What's a Skill?
 
